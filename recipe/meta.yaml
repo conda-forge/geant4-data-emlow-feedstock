@@ -1,6 +1,6 @@
 {% set dataset_name = "EMLOW" %}
-{% set version = "7.9" %}
-{% set sha256 = "8b29862b5221822e54a51d8fb480d7b99cab0e392b36b366ad0564a429267dec" %}
+{% set version = "7.10" %}
+{% set sha256 = "b349fdb606542719e0a6eea76baa297d77cf3374598e0e7149529049f85f7a9f" %}
 {% set env_var = "G4LEDATA" %}
 {% set summary = "GEANT4 data files for low energy electromagnetic processes" %}
 
@@ -8,21 +8,21 @@
 {% set install_dir = "share/Geant4/data/"+dataset_name+version %}
 
 package:
-    name: {{ name }}
-    version: {{ version }}
+  name: {{ name }}
+  version: {{ version }}
 
 source:
-    url: https://geant4-data.web.cern.ch/geant4-data/datasets/G4{{ dataset_name }}.{{ version }}.tar.gz
-    sha256: {{ sha256 }}
-    folder: dataset
+  url: https://geant4-data.web.cern.ch/geant4-data/datasets/G4{{ dataset_name }}.{{ version }}.tar.gz
+  sha256: {{ sha256 }}
+  folder: dataset
 
 build:
-    number: 0
-    noarch: generic
-    script:
-        - mkdir -p ${PREFIX}/{{ install_dir }}
-        - cp -r dataset/* ${PREFIX}/{{ install_dir }}
-        - ${RECIPE_DIR}/create_activation_scripts.sh {{ name }} {{ env_var }} {{ install_dir }}
+  number: 0
+  noarch: generic
+  script:
+    - mkdir -p ${PREFIX}/{{ install_dir }}
+    - cp -r dataset/* ${PREFIX}/{{ install_dir }}
+    - ${RECIPE_DIR}/create_activation_scripts.sh {{ name }} {{ env_var }} {{ install_dir }}
 
 # Conda-forge is unable to build packages that have no dependencies so add
 # `make` as a dummy build dependency
@@ -31,16 +31,16 @@ requirements:
     - make
 
 test:
-    commands:
-        - "[ \"${{ env_var }}\" == \"$CONDA_PREFIX/{{ install_dir }}\" ]"
+  commands:
+    - '[ "${{ env_var }}" == "$CONDA_PREFIX/{{ install_dir }}" ]'
 
 about:
-    home: https://geant4.web.cern.ch/
-    summary: '{{ summary }}'
-    license: OTHER
-    license_file: CREDIT
+  home: https://geant4.web.cern.ch/
+  summary: {{ summary }}
+  license: OTHER
+  license_file: CREDIT
 
 extra:
-    recipe-maintainers:
-        - tschoonj
-        - chrisburr
+  recipe-maintainers:
+    - tschoonj
+    - chrisburr
