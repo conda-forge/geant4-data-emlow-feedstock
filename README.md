@@ -5,7 +5,7 @@ Home: https://geant4.web.cern.ch/
 
 Package license: OTHER
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: GEANT4 data files for low energy electromagnetic processes
 
