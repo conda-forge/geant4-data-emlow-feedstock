@@ -1,6 +1,6 @@
 {% set dataset_name = "EMLOW" %}
-{% set version = "8.0" %}
-{% set sha256 = "1f03dab45c4214d7999a78ed6955787bf3820503f2ab72cf1db497777c61e9f5" %}
+{% set version = "8.1" %}
+{% set sha256 = "5ee3cca3767768fc1554d7161f1b79fe63021363795f05067eb723aa8a1f8eea" %}
 {% set env_var = "G4LEDATA" %}
 {% set summary = "GEANT4 data files for low energy electromagnetic processes" %}
 
