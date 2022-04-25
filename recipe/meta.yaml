@@ -1,6 +1,6 @@
 {% set dataset_name = "EMLOW" %}
 {% set version = "8.0" %}
-{% set sha256 = "1f03dab45c4214d7999a78ed6955787bf3820503f2ab72cf1db497777c61e9f5" %}
+{% set sha256 = "d919a8e5838688257b9248a613910eb2a7633059e030c8b50c0a2c2ad9fd2b3b" %}
 {% set env_var = "G4LEDATA" %}
 {% set summary = "GEANT4 data files for low energy electromagnetic processes" %}
 
@@ -17,7 +17,7 @@ source:
   folder: dataset
 
 build:
-  number: 0
+  number: 1
   noarch: generic
   script:
     - mkdir -p ${PREFIX}/{{ install_dir }}
