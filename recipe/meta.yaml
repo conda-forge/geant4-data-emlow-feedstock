@@ -1,18 +1,19 @@
 {% set dataset_name = "EMLOW" %}
-{% set version = "8.6.1" %}
-{% set sha256 = "4a93588d26080ce1d336b94f76fadabe4905fb8f1cba2415795023d6cd8f4a8a" %}
+{% set version = "8.8.0" %}
+{% set version_canonical_geant4 = "8.8" %}
+{% set sha256 = "b60cfd63176f5d16107e2a25b35b235155032d1735d749670ca50fede12624cf" %}
 {% set env_var = "G4LEDATA" %}
 {% set summary = "GEANT4 data files for low energy electromagnetic processes" %}
 
 {% set name = "geant4-data-"+dataset_name.lower() %}
-{% set install_dir = "share/Geant4/data/"+dataset_name+version %}
+{% set install_dir = "share/Geant4/data/"+dataset_name+version_canonical_geant4 %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
-  url: https://geant4-data.web.cern.ch/geant4-data/datasets/G4{{ dataset_name }}.{{ version }}.tar.gz
+  url: https://geant4-data.web.cern.ch/geant4-data/datasets/G4{{ dataset_name }}.{{ version_canonical_geant4 }}.tar.gz
   sha256: {{ sha256 }}
   folder: dataset
 
